@@ -1684,6 +1684,25 @@ input[type=radio] + label:before {
   display: none;
 }
 
+/* custom settings for contact form icon */
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  max-width: 800px; /* optional */
+  margin: 0 auto;
+}
+
+.contact-item {
+  flex: 1;
+}
+
+.custom-icon {
+  margin-right: 5px;
+  color: #777;
+}
+
 /* Image */
 .image {
   border-radius: 0.35em;
@@ -2054,13 +2073,6 @@ input[type=button].special:hover,
 .button.special:hover {
   background-color: rgb(91.8658536585, 197.6341463415, 167.1585365854);
   border-color: rgb(91.8658536585, 197.6341463415, 167.1585365854);
-}
-input[type=submit].special:active,
-input[type=reset].special:active,
-input[type=button].special:active,
-.button.special:active {
-  background-color: rgb(62.0487804878, 176.4512195122, 143.487804878);
-  border-color: rgb(62.0487804878, 176.4512195122, 143.487804878);
 }
 input[type=submit].disabled, input[type=submit]:disabled,
 input[type=reset].disabled,
