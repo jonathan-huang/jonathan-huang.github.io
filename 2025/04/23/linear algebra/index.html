@@ -1,139 +1,331 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Head tag -->
+    
 <head>
-
-    <!-- Title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Jonathan Huang&#39;s website">
+    <title>Linear Algebra (Yang, Yi-Fan) - Jonathan Huang&#39;s website</title>
+    <meta name="author" content="Jonathan Huang">
     
-    <title>Linear Algebra (Yang-Yi Fang) - Jonathan Huang&#39;s website</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!--Description-->
+        <meta name="keywords" content="Jonathan Huang, Shao-Kai,tranquilpeak,hexo,">
     
-        <meta name="description" content="This website records my academic work.">
     
-
-    <!--Author-->
+        <link rel="icon" href="https://jonathan-huang.github.io/images/favicon.ico">
     
-        <meta name="author" content="Jonathan Huang">
     
-
-    <!--Favicon-->
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jonathan Huang","sameAs":["https://github.com/jonathan-huang","https://stackexchange.com/users/18023236/jonathan-huang","https://www.facebook.com/profile.php?id=100065738466603","https://www.linkedin.com/in/jonathan-huang-0b4280310/","mailto:huang20041014@gmail.com"],"image":"me.jpg"},"articleBody":"\nThe course Linear Algebra is a two-semester course taught by Professor Yang-Yi Fan in the 2024 Fall and the 2025 Spring semesters.\n\n\nLecturer: Professor Yang, Yi-FanGrade: A+ &#x2F; A-Textbook: \n\nFriedberg, S. H.; Insel, A. J.; Spence, L. E. (2003). Linear Algebra 4e [FIS] (main) \nHoffman, Kenneth M; Kunze, Ray (1971). Linear Algebra 2e [H&amp;K] (supplementary).\n\nThis course is a mandatory course for students of mathematics in National Taiwan University. Some of the proofs of extra exercises are not complete.\nLinear Algebra I Homeworks\nHomework 3\nHomework 4\nHomework 5\nHomework 6\nHomework 7\nHomework 8\nHomework 9\nHomework 10\nHomework 11\nHomework 12\nHomework 13\n\nLinear Algebra II Homeworks\nIn progress… To be added.\nA short proof of the Hodge decomposition theorem\n\n","dateCreated":"2025-04-23T17:07:28+08:00","dateModified":"2025-06-30T03:15:47+08:00","datePublished":"2025-04-23T17:07:28+08:00","description":"\nThe course Linear Algebra is a two-semester course taught by Professor Yang-Yi Fan in the 2024 Fall and the 2025 Spring semesters.","headline":"Linear Algebra (Yang, Yi-Fan)","image":["/images/thumbs/svd.png","/images/cover.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://jonathan-huang.github.io/2025/04/23/linear%20algebra/"},"publisher":{"@type":"Organization","name":"Jonathan Huang","sameAs":["https://github.com/jonathan-huang","https://stackexchange.com/users/18023236/jonathan-huang","https://www.facebook.com/profile.php?id=100065738466603","https://www.linkedin.com/in/jonathan-huang-0b4280310/","mailto:huang20041014@gmail.com"],"image":"me.jpg","logo":{"@type":"ImageObject","url":"me.jpg"}},"url":"https://jonathan-huang.github.io/2025/04/23/linear%20algebra/","thumbnailUrl":"/images/thumbs/svd.png"}</script>
+    <meta name="description" content="Notes and homework solutions from my linear algebra class">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Linear Algebra (Yang, Yi-Fan)">
+<meta property="og:url" content="https://jonathan-huang.github.io/2025/04/23/linear%20algebra/index.html">
+<meta property="og:site_name" content="Jonathan Huang&#39;s website">
+<meta property="og:description" content="Notes and homework solutions from my linear algebra class">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-23T09:07:28.000Z">
+<meta property="article:modified_time" content="2025-06-29T19:15:47.732Z">
+<meta property="article:author" content="Jonathan Huang">
+<meta property="article:tag" content="Jonathan Huang, Shao-Kai">
+<meta property="article:tag" content="tranquilpeak">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
     
-      <link rel="icon" href="images/favicon.ico">
     
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="Linear Algebra (Yang-Yi Fang)"/>
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Jonathan Huang&#39;s website"/>
-
-    <!--Page Cover-->
-    
-        <meta property="og:image" content=""/>
-    
-
-
-
-    <!-- Custom CSS -->
-    
-<link rel="stylesheet" href="/sass/main.css">
-
-
-    <!--[if lt IE 8]>
         
-<script src="/js/ie/html5shiv.js"></script>
-
-    <![endif]-->
-
-    <!--[if lt IE 8]>
-        
-<link rel="stylesheet" href="/sass/ie8.css">
-
-    <![endif]-->
-
-
-    <!-- Google Analytics -->
     
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+        <meta property="og:image" content="https://jonathan-huang.github.io/images/me.jpg"/>
+    
+    
+        <meta property="og:image" content="https://jonathan-huang.github.io/2025/04/23/linear%20algebra/images/thumbs/svd.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://jonathan-huang.github.io/2025/04/23/linear%20algebra/images/thumbs/svd.png"/>
+    
+    
+        <meta property="og:image" content="https://jonathan-huang.github.io/2025/04/23/linear%20algebra/images/cover.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://jonathan-huang.github.io/2025/04/23/linear%20algebra/images/cover.png"/>
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/style-yomhuxwl8xrw1wbvk9esm9dac2b54lu9jog32jicluys5eorczonqc4npxlp.min.css">
 
-        ga('create', 'true', 'auto');
-        ga('send', 'pageview');
+    <!--STYLES END-->
+    
 
-    </script>
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
 
 
+    
+        
+            
+        
+    
 
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-
-<body id="top">
-
-    <!-- Header -->
-    <header id="header">
-  <div class="inner">
-    <a href="/" class="image avatar"><img src="/images/me.jpg" alt="Hi"></a>
-    <h1><strong>This is my site</strong>. You may find my notes and work here.</h1>
-  </div>
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            Jonathan Huang&#39;s website
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+            <img class="header-picture" src="/images/me.jpg" alt="Author&#39;s picture"/>
+        
+        </a>
+    
 </header>
 
-
-    <!-- Main -->
-		<div id="main">
-
-      <!-- Main Content -->
-      <!-- One -->
-<section id="one">
-  <div class="meta">
-  
-      <span class="date">
-          2025-04-23
-      </span>
-  
-
-  
-
-  
+            <!-- Define author's picture -->
 
 
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a
+                    href="/#about"
+                    aria-label="Read more about the author"
+                >
+                    <img class="sidebar-profile-picture" src="/images/me.jpg" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">Jonathan Huang</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>I am a student of physics at National Taiwan University. I am interested in mathematical physics and biophysics. You may find my work here.</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-archives"
+                            
+                            rel="noopener"
+                            title="Archives"
+                        >
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link open-algolia-search"
+                            href="#search"
+                            
+                            rel="noopener"
+                            title="Search"
+                        >
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="#about"
+                            
+                            rel="noopener"
+                            title="About"
+                        >
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/jonathan-huang"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://stackexchange.com/users/18023236/jonathan-huang"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="Stack Overflow"
+                        >
+                        <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Stack Overflow</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://www.facebook.com/profile.php?id=100065738466603"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="Facebook"
+                        >
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://www.linkedin.com/in/jonathan-huang-0b4280310/"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="LinkedIn"
+                        >
+                        <i class="sidebar-button-icon fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="mailto:huang20041014@gmail.com"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="Mail"
+                        >
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+<div class="post-header-cover
+            text-center
+            post-header-cover--full"
+     style="background-image:url('/images/cover.png');"
+     data-behavior="4">
+    
 </div>
 
+//
 
+
+
+            <div id="main" data-behavior="4"
+                 class="hasCover
+                        hasCoverMetaOut
+                        hasCoverCaption">
+                
+<article class="post">
+    
+        <span class="post-header-cover-caption caption">A Jordan canonical form</span>
+    
+    
+        <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title">
+            Linear Algebra (Yang, Yi-Fan)
+        </h1>
+    
+    
+</div>
 
     
-      <h1 itemprop="name">
-        Linear Algebra (Yang-Yi Fang)
-      </h1>
-    
-  
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <hr>
+<p>The course Linear Algebra is a two-semester course taught by Professor Yang-Yi Fan in the 2024 Fall and the 2025 Spring semesters.</p>
+<span id="more"></span>
 
-
-
-    <div class="image main"><img src="/images/thumbs/jordan.png" alt="" /></div>
-
-
-<!-- Gallery -->
-
-
-
-<!-- Content -->
-<p>The course linear algebra is a two-semester course, and is taught by Professor Yang-Yi Fang in the 2024 Fall and the 2025 Spring terms. </p>
+<p>Lecturer: Professor Yang, Yi-Fan<br>Grade: A+ &#x2F; A-<br>Textbook: </p>
 <ul>
-<li>Lecturer: Professor Yang, Yi-Fang</li>
-<li>Textbook: Friedberg, S. H.; Insel, A. J.; Spence, L. E. (2003). <em>Linear Algebra 4e</em> [FIS] (main) and Hoffman, Kenneth M; Kunze, Ray (1971). <em>Linear Algebra 2e</em> [H&amp;K] (supplementary).</li>
-<li>Difficulty:</li>
+<li>Friedberg, S. H.; Insel, A. J.; Spence, L. E. (2003). <em>Linear Algebra 4e</em> [FIS] (main) </li>
+<li>Hoffman, Kenneth M; Kunze, Ray (1971). <em>Linear Algebra 2e</em> [H&amp;K] (supplementary).</li>
 </ul>
-<p>Some of the proofs of extra exercises are not complete.</p>
+<p>This course is a mandatory course for students of mathematics in National Taiwan University. Some of the proofs of extra exercises are not complete.</p>
 <h2 id="Linear-Algebra-I-Homeworks"><a href="#Linear-Algebra-I-Homeworks" class="headerlink" title="Linear Algebra I Homeworks"></a>Linear Algebra I Homeworks</h2><ul>
 <li><a href="/files/la/hw3.pdf">Homework 3</a></li>
 <li><a href="/files/la/hw4.pdf">Homework 4</a></li>
@@ -152,129 +344,79 @@
 <li><a href="/files/la/hodge.pdf">A short proof of the Hodge decomposition theorem</a></li>
 </ul>
 
-
-<!-- Tags -->
-
+            
 
 
-<div class="tags">
-    
-</div>
-
-
-<!-- Comments -->
-<div>
-    
-    <hr />
-    <h3>comment:</h3>
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
     </div>
-
-
-
-</div>
-
-</section>
-
-
-      <!-- Three - the contact form is on every page! -->
-        <section id="three">
-          <h2> Announcements </h2>
-I am looking for tutoring students! You can read more about it by clicking <a href="/files/tutor.pdf">here</a> <br>
-
-我在找物理家教學生！想了解更多可以參考看以下<a href="/files/tutor.pdf">文件</a>。
-
-<div class="contact-info">
-  <div class="contact-item">
-      
-  </div>
-</div>
-
+    <div id="post-footer" class="post-footer main-content-wrap">
         
-
-
-        </section>
-
-        <!-- Footer -->
-<footer id="footer">
-    <div class="inner">
-
-        <ul class="icons">
-            
-            
-                <li><a href="https://www.facebook.com/profile.php?id=100065738466603" class="icon fa-facebook" target="_blank" ><span class="label">Facebook</span></a></li>
-            
-            
-                <li><a href="https://www.instagram.com/h20041014/" class="icon fa-instagram" target="_blank" ><span class="label">Instagram</span></a></li>
-            
-            
-            
-                <li><a href="https://github.com/jonathan-huang" class="icon fa-github" target="_blank" ><span class="label">GitHub</span></a></li>
-            
-            
-            
-            
-            
-            
-        </ul>
-
-        <ul class="copyright">
-            <li>&copy; 2025 Jonathan Huang</li>
-            <li><i class="icon fa-home custom-icon"><span class="label">Address</span></i>Taiwan, Taipei</li>
-            <li> <i class="icon fa-envelope-o custom-icon"><span class="label">Email</span></i>email: <a href="#">huang20041014@gmail.com</a> </li> 
-            <li>Hexo: <a href="http://livingos.com/" target="_blank">strata theme</a></li>
-        </ul>
+        
+        
     </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2025 Jonathan Huang. All Rights Reserved.
+    </span>
 </footer>
 
+            </div>
+            
+        </div>
         
-    </div>
 
-    <!-- After footer scripts -->
-      <!-- Scripts -->
-  
-<script src="/js/jquery.min.js"></script>
-  
-<script src="/js/jquery.poptrox.min.js"></script>
-  
-<script src="/js/skel.min.js"></script>
-  
-<script src="/js/util.js"></script>
-
-  <!--[if lte IE 8]>
-  
-<script src="/js/ie/respond.min.js"></script>
-
-  <![endif]-->
-
-  
-<script src="/js/main.js"></script>
-
-  <!-- Disqus Comments -->
-  
-  <script type="text/javascript">
-      var disqus_shortname = 'livingos';
-
-      (function(){
-          var dsq = document.createElement('script');
-          dsq.type = 'text/javascript';
-          dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }());
-  </script>
-  
 
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YN23QQVTZ8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        
+    
 
-      gtag('config', 'G-YN23QQVTZ8');
-    </script>
-</body>
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/images/me.jpg" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">Jonathan Huang</h4>
+        
+            <div id="about-card-bio"><p>I am a student of physics at National Taiwan University. I am interested in mathematical physics and biophysics. You may find my work here.</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Student at National Taiwan University</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br/>
+                Taipei, Taiwan
+            </div>
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/script-xty5irhzds6ed8m1kzql6qom9c1tf8mqcxyp2shn6olxqntwmxemzal7aqjq.min.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
 </html>
