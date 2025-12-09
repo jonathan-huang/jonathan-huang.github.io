@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Jonathan Huang&#39;s website">
+    <title>Lin Lab @IMB, Academia Sinica - Jonathan Huang&#39;s website</title>
+    <meta name="author" content="Jonathan Huang">
+    
+        <meta name="keywords" content="Jonathan Huang, Shao-Kai,tranquilpeak,hexo,">
+    
+    
+        <link rel="icon" href="https://jonathan-huang.github.io/images/favicon.ico">
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jonathan Huang","sameAs":["https://github.com/jonathan-huang","https://stackexchange.com/users/18023236/jonathan-huang","https://www.facebook.com/profile.php?id=100065738466603","mailto:huang20041014@gmail.com"],"image":"me.jpg"},"articleBody":"\n\nRibosomes are autocatalytic machines, and understanding the dynamics and strategies of how ribosomes allocate resources is a vital topic of molecular biology research.\n2025 WinterI joined Dr. Lin, Wei-Hsiang’s molecular biology lab in January of 2025, and was assigned a short project, which I completed while outside the country. This work is unfinished. In the work, I devise a recursive scheme for deriving arbitrarily accurate coarse-graining for a simple autocatalytic pathway (SAP), implying we can treat an autocatalytic linear reaction network (LNR) of arbitrary length as an equivalent circuit with length two, which admit an analytic expression. Note that, despite this, the analytic expressions are usually monstrous.\nSee my preliminary results here\n2025 SpringMy project concerns the allocation of resources in a cell. The details are not disclosed, but you may see some pretty graphs from the research. Cells have to make more cells, and this is done through the help of ribosomes, which are thus autocatalytic machines, i.e. in addition to making proteins for the cell, they must also make themselves. The main topic of interest is how cells allocate their resources to optimize the efficiency of this autocatalytic process. This work is based on Scott M, Gunderson CW, Mateescu EM, Zhang Z, Hwa T. Interdependence of cell growth and gene expression: origins and consequences. Science. 2010 Nov 19;330(6007):1099-102. https://10.1126/science.1192588.\nPresentations\n20250214: The paper discusses bounds on entropy production by a living organism. I presented a detailed study of entropy production in non-equilibrium and coarse-grained systems, and provided a mathematical viewpoint for entropy here. The main takeaway is that living things are out-of-equilibrium, and therefore break detailed balance.\n\n20250620: New paper Constraints on Metabolic Network Analysis in Bacterial Physiology by Matthew Scott et al. talks about the coarse-graining paradigm for cellular metabolism. Here are the BEAMER slides for my presentation. Interestingly, cellular metabolism may be interpreted as a modular bowtie, as introduced in the paper Bow ties, metabolism and disease by Marie Csete and John Doyle.\n\n\n\n\nBacterial Growth Laws\nOptimization after SoftMax\n\n\nMore sectors leads to new behavior\n\n\n\nProteome partition model\nmetabolic engineering\n","dateCreated":"2025-12-08T00:00:00+08:00","dateModified":"2025-12-09T03:05:05+08:00","datePublished":"2025-12-08T00:00:00+08:00","description":"We study the biophysics and mathematics of complex systems arising from biological phenomena.","headline":"Lin Lab @IMB, Academia Sinica","image":["/images/thumbs/PP.png","/images/thumbs/imb1.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://jonathan-huang.github.io/2025/12/08/imb/"},"publisher":{"@type":"Organization","name":"Jonathan Huang","sameAs":["https://github.com/jonathan-huang","https://stackexchange.com/users/18023236/jonathan-huang","https://www.facebook.com/profile.php?id=100065738466603","mailto:huang20041014@gmail.com"],"image":"me.jpg","logo":{"@type":"ImageObject","url":"me.jpg"}},"url":"https://jonathan-huang.github.io/2025/12/08/imb/","thumbnailUrl":"/images/thumbs/PP.png"}</script>
+    <meta name="description" content="Record of my notes, research topics overview, and preliminary results from Lin&#39;s Lab, IMB 503. You are welcome tp discuss with me!">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Lin Lab @IMB, Academia Sinica">
+<meta property="og:url" content="https://jonathan-huang.github.io/2025/12/08/imb/index.html">
+<meta property="og:site_name" content="Jonathan Huang&#39;s website">
+<meta property="og:description" content="Record of my notes, research topics overview, and preliminary results from Lin&#39;s Lab, IMB 503. You are welcome tp discuss with me!">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jonathan-huang.github.io/images/lin/growth_laws.png">
+<meta property="og:image" content="https://jonathan-huang.github.io/images/lin/heatmap.png">
+<meta property="og:image" content="https://jonathan-huang.github.io/images/lin/lambda_vs_theta_medium_b_n=6.png">
+<meta property="og:image" content="https://jonathan-huang.github.io/images/lin/lambda_vs_b.png">
+<meta property="og:image" content="https://jonathan-huang.github.io/images/lin/three_sector_model.png">
+<meta property="og:image" content="https://jonathan-huang.github.io/images/lin/MCA.png">
+<meta property="article:published_time" content="2025-12-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-08T19:05:05.893Z">
+<meta property="article:author" content="Jonathan Huang">
+<meta property="article:tag" content="Jonathan Huang, Shao-Kai">
+<meta property="article:tag" content="tranquilpeak">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jonathan-huang.github.io/images/lin/growth_laws.png">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://jonathan-huang.github.io/images/me.jpg"/>
+    
+    
+        <meta property="og:image" content="https://jonathan-huang.github.io/2025/12/08/imb/images/thumbs/PP.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://jonathan-huang.github.io/2025/12/08/imb/images/thumbs/PP.png"/>
+    
+    
+        <meta property="og:image" content="https://jonathan-huang.github.io/2025/12/08/imb/images/thumbs/imb1.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://jonathan-huang.github.io/2025/12/08/imb/images/thumbs/imb1.png"/>
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/style-yomhuxwl8xrw1wbvk9esm9dac2b54lu9jog32jicluys5eorczonqc4npxlp.min.css">
+
+    <!--STYLES END-->
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YN23QQVTZ8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-YN23QQVTZ8');
+    </script>
+
+
+    
+
+    
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/"
+            aria-label=""
+        >
+            Jonathan Huang&#39;s website
+        </a>
+    </div>
+    
+        
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="Open the link: /#about"
+            >
+        
+        
+            <img class="header-picture" src="/images/me.jpg" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a
+                    href="/#about"
+                    aria-label="Read more about the author"
+                >
+                    <img class="sidebar-profile-picture" src="/images/me.jpg" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">Jonathan Huang</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>I am a student of physics at National Taiwan University. I am interested in mathematical physics and biophysics. You may find my work here.</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/"
+                            
+                            rel="noopener"
+                            title="Home"
+                        >
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="/all-categories"
+                            
+                            rel="noopener"
+                            title="Categories"
+                        >
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link open-algolia-search"
+                            href="#search"
+                            
+                            rel="noopener"
+                            title="Search"
+                        >
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="#about"
+                            
+                            rel="noopener"
+                            title="About"
+                        >
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://github.com/jonathan-huang"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="GitHub"
+                        >
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://stackexchange.com/users/18023236/jonathan-huang"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="Stack Overflow"
+                        >
+                        <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Stack Overflow</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="https://www.facebook.com/profile.php?id=100065738466603"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="Facebook"
+                        >
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a
+                            class="sidebar-button-link "
+                            href="mailto:huang20041014@gmail.com"
+                            
+                                target="_blank"
+                            
+                            rel="noopener"
+                            title="Mail"
+                        >
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+<div class="post-header-cover
+            text-center
+            post-header-cover--full"
+     style="background-image:url('/images/thumbs/imb1.png');"
+     data-behavior="4">
+    
+</div>
+
+
+
+
+            <div id="main" data-behavior="4"
+                 class="hasCover
+                        hasCoverMetaOut
+                        hasCoverCaption">
+                
+<article class="post">
+    
+        <span class="post-header-cover-caption caption">Institute of Molecular Biology, Academia Sinica</span>
+    
+    
+        <div class="post-header main-content-wrap text-center">
+    
+        <h1 class="post-title">
+            Lin Lab @IMB, Academia Sinica
+        </h1>
+    
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <!-- excerpt -->
+
+<p>Ribosomes are autocatalytic machines, and understanding the dynamics and strategies of how ribosomes allocate resources is a vital topic of molecular biology research.</p>
+<h2 id="2025-Winter"><a href="#2025-Winter" class="headerlink" title="2025 Winter"></a>2025 Winter</h2><p>I joined Dr. Lin, Wei-Hsiang’s molecular biology lab in January of 2025, and was assigned a short project, which I completed while outside the country. This work is unfinished. In the work, I devise a recursive scheme for deriving arbitrarily accurate coarse-graining for a <em>simple autocatalytic pathway (SAP)</em>, implying we can treat an autocatalytic linear reaction network (LNR) of arbitrary length as an equivalent circuit with length two, which admit an analytic expression. Note that, despite this, the analytic expressions are usually <em>monstrous</em>.</p>
+<p>See my preliminary results <a href="/files/winter.pdf">here</a></p>
+<h2 id="2025-Spring"><a href="#2025-Spring" class="headerlink" title="2025 Spring"></a>2025 Spring</h2><p>My project concerns the allocation of resources in a cell. The details are not disclosed, but you may see some pretty graphs from the research. Cells have to make more cells, and this is done through the help of ribosomes, which are thus autocatalytic machines, i.e. in addition to making proteins for the cell, they must also make themselves. The main topic of interest is how cells allocate their resources to optimize the efficiency of this autocatalytic process. This work is based on Scott M, Gunderson CW, Mateescu EM, Zhang Z, Hwa T. <em>Interdependence of cell growth and gene expression: origins and consequences</em>. Science. 2010 Nov 19;330(6007):1099-102. <a target="_blank" rel="noopener" href="https://10.0.4.102/science.1192588">https://10.1126/science.1192588</a>.</p>
+<h2 id="Presentations"><a href="#Presentations" class="headerlink" title="Presentations"></a>Presentations</h2><ul>
+<li><p>20250214: The <a href="/files/imb/20250214_imporved_bounds.pdf">paper</a> discusses bounds on entropy production by a living organism. I presented a detailed study of entropy production in non-equilibrium and coarse-grained systems, and provided a mathematical viewpoint for entropy <a href="/files/imb/20250214.pdf">here</a>. The main takeaway is that living things are out-of-equilibrium, and therefore <a href="/files/imb/20250214_broken_detailed_balance.pdf">break detailed balance</a>.</p>
+</li>
+<li><p>20250620: <a href="/files/imb/20250620_circuit.pdf">New paper</a> <em>Constraints on Metabolic Network Analysis in Bacterial Physiology</em> by Matthew Scott et al. talks about the coarse-graining paradigm for cellular metabolism. <a href="/files/imb/20250620.pdf">Here</a> are the BEAMER slides for my presentation. Interestingly, cellular metabolism may be interpreted as a <em>modular bowtie</em>, as introduced in the <a href="/files/imb/20250620_bowties.pdf">paper</a> <em>Bow ties, metabolism and disease</em> by Marie Csete and John Doyle.</p>
+</li>
+</ul>
+<div style="margin-bottom: 30px;"></div>
+
+<div class="figure fig-50" style="width:;"><a class="fancybox" href="/images/lin/growth_laws.png" title="Bacterial Growth Laws" data-caption="Bacterial Growth Laws" data-fancybox="my-gallery"><img class="fig-img" src="/images/lin/growth_laws.png" alt="Bacterial Growth Laws"></a><span class="caption">Bacterial Growth Laws</span></div>
+<div class="figure fig-50" style="width:;"><a class="fancybox" href="/images/lin/heatmap.png" title="Optimization after SoftMax" data-caption="Optimization after SoftMax" data-fancybox="my-gallery"><img class="fig-img" src="/images/lin/heatmap.png" alt="Optimization after SoftMax"></a><span class="caption">Optimization after SoftMax</span></div>
+<div style="clear:both;"></div>
+
+<div class="figure fig-50" style="width:;"><a class="fancybox" href="/images/lin/lambda_vs_theta_medium_b_n=6.png" title="More sectors leads to new behavior" data-caption="More sectors leads to new behavior" data-fancybox="my-gallery"><img class="fig-img" src="/images/lin/lambda_vs_theta_medium_b_n=6.png" alt="More sectors leads to new behavior"></a><span class="caption">More sectors leads to new behavior</span></div>
+<div class="figure fig-50" style="width:;"><a class="fancybox" href="/images/lin/lambda_vs_b.png" title="" data-caption="" data-fancybox="my-gallery"><img class="fig-img" src="/images/lin/lambda_vs_b.png" alt=""></a></div>
+<div style="clear:both;"></div>
+
+<div class="figure fig-50" style="width:;"><a class="fancybox" href="/images/lin/three_sector_model.png" title="Proteome partition model" data-caption="Proteome partition model" data-fancybox="my-gallery"><img class="fig-img" src="/images/lin/three_sector_model.png" alt="Proteome partition model"></a><span class="caption">Proteome partition model</span></div>
+<div class="figure fig-50" style="width:;"><a class="fancybox" href="/images/lin/MCA.png" title="metabolic engineering" data-caption="metabolic engineering" data-fancybox="my-gallery"><img class="fig-img" src="/images/lin/MCA.png" alt="metabolic engineering"></a><span class="caption">metabolic engineering</span></div>
+<div style="clear:both;"></div>
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2025 Jonathan Huang. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/images/me.jpg" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">Jonathan Huang</h4>
+        
+            <div id="about-card-bio"><p>I am a student of physics at National Taiwan University. I am interested in mathematical physics and biophysics. You may find my work here.</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Student at National Taiwan University</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br/>
+                Taipei, Taiwan
+            </div>
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/script-xty5irhzds6ed8m1kzql6qom9c1tf8mqcxyp2shn6olxqntwmxemzal7aqjq.min.js"></script>
+
+<!--SCRIPTS END-->
+
+
+
+
+
+    </body>
+</html>
