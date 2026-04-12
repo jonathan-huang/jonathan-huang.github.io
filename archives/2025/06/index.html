@@ -84,6 +84,7 @@
         >
             Jonathan Huang&#39;s website
         </a>
+        <button id="header-lang-btn" onclick="window.toggleLanguage()" style="margin-left: 20px; padding: 2px 8px; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.5); color: #fff; border-radius: 3px; cursor: pointer; font-size: 0.8em; vertical-align: middle;">EN / 繁</button>
     </div>
     
         
@@ -108,7 +109,13 @@
     
 
 <nav id="sidebar" data-behavior="1">
-    <div class="sidebar-container">
+    <div style="position: absolute; top: 15px; left: 15px; z-index: 10;">
+        <button id="lang-switch-btn" onclick="window.toggleLanguage()" style="padding: 4px 8px; background: transparent; border: 1px solid #9e9e9e; color: #9e9e9e; border-radius: 4px; cursor: pointer; font-size: 0.8em; transition: all 0.2s; display: flex; align-items: center; gap: 5px;" onmouseover="this.style.color='#fff'; this.style.borderColor='#fff'" onmouseout="this.style.color='#9e9e9e'; this.style.borderColor='#9e9e9e'">
+            <i class="fa fa-globe"></i>
+            <span id="lang-display" style="font-weight: bold;">EN <i class="fa fa-exchange"></i> 繁</span>
+        </button>
+    </div>
+    <div class="sidebar-container" style="padding-top: 20px;">
         
             <div class="sidebar-profile">
                 <a
@@ -119,7 +126,7 @@
                 </a>
                 <h4 class="sidebar-profile-name">Jonathan Huang</h4>
                 
-                    <h5 class="sidebar-profile-bio"><p>I am a student of physics at National Taiwan University. I am interested in mathematical physics and biophysics. You may find my work here.</p>
+                    <h5 class="sidebar-profile-bio"><p><span class="lang-en">I am a Physics and Mathematics double major with a minor in Electrical Engineering at National Taiwan University.</span><span class="lang-tw" style="display: none;">我在台灣大學主修物理和數學，並輔修電機。</span></p>
 </h5>
                 
             </div>
@@ -134,10 +141,13 @@
                             href="/"
                             
                             rel="noopener"
-                            title="Home"
                         >
                         <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Home</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">Home</span>
+                            <span class="lang-tw" style="display: none;">首頁</span>
+                        </span>
                     </a>
             </li>
             
@@ -148,24 +158,13 @@
                             href="/all-categories"
                             
                             rel="noopener"
-                            title="Categories"
                         >
                         <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Categories</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a
-                            class="sidebar-button-link open-algolia-search"
-                            href="#search"
+                        <span class="sidebar-button-desc">
                             
-                            rel="noopener"
-                            title="Search"
-                        >
-                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Search</span>
+                            <span class="lang-en">Categories</span>
+                            <span class="lang-tw" style="display: none;">分類</span>
+                        </span>
                     </a>
             </li>
             
@@ -176,10 +175,13 @@
                             href="#about"
                             
                             rel="noopener"
-                            title="About"
                         >
                         <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">About</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">About</span>
+                            <span class="lang-tw" style="display: none;">關於</span>
+                        </span>
                     </a>
             </li>
             
@@ -196,10 +198,13 @@
                                 target="_blank"
                             
                             rel="noopener"
-                            title="GitHub"
                         >
                         <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">GitHub</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">GitHub</span>
+                            <span class="lang-tw" style="display: none;">GitHub</span>
+                        </span>
                     </a>
             </li>
             
@@ -212,10 +217,13 @@
                                 target="_blank"
                             
                             rel="noopener"
-                            title="Stack Overflow"
                         >
                         <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Stack Overflow</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">Stack Overflow</span>
+                            <span class="lang-tw" style="display: none;">Stack Overflow</span>
+                        </span>
                     </a>
             </li>
             
@@ -228,10 +236,13 @@
                                 target="_blank"
                             
                             rel="noopener"
-                            title="Facebook"
                         >
                         <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Facebook</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">Facebook</span>
+                            <span class="lang-tw" style="display: none;">Facebook</span>
+                        </span>
                     </a>
             </li>
             
@@ -244,10 +255,13 @@
                                 target="_blank"
                             
                             rel="noopener"
-                            title="Mail"
                         >
                         <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Mail</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">Mail</span>
+                            <span class="lang-tw" style="display: none;">Mail</span>
+                        </span>
                     </a>
             </li>
             
@@ -276,71 +290,11 @@
                     
                         <a
                             class="link-unstyled"
-                            href="/2025/06/30/2025_spring/"
-                            aria-label=": 2025 Spring Semester (NTU)"
-                        >
-                            2025 Spring Semester (NTU)
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2025-06-30T22:00:00-04:00">
-	
-		    30 Jun 2025
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Notes/">Notes</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt">
-                    <p>Below are some of the courses I took in the 2025 spring semester in NTU. </p>
-                    
-                        <a
-                            href="/2025/06/30/2025_spring/"
-                            class="postShorten-excerpt_link link"
-                            aria-label=": 2025 Spring Semester (NTU)"
-                        >
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-            <a
-                href="/2025/06/30/2025_spring/"
-                aria-label=": 2025 Spring Semester (NTU)"
-            >
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" src="/images/thumbs/ntu_4.jpg"/>
-                </div>
-            </a>
-            
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-left">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
                             href="/2025/06/30/tutoring/"
                             aria-label=": Tutoring"
                         >
-                            Tutoring
+                            <span class="lang-en">Tutoring</span>
+                            <span class="lang-tw" style="display: none;">物理競賽家教</span>
                         </a>
                     
                 </h1>
@@ -362,7 +316,15 @@
             </div>
             
                 <div class="postShorten-excerpt">
-                    <p>I began tutoring talented high school students to prepare for high-school-level physics competitions.</p>
+                    <div class="lang-en">
+
+<p>I began tutoring talented high school students to prepare for high-school-level physics competitions.</p>
+</div>
+
+<div class="lang-tw" style="display: none;">
+
+<p>我正在接高中物理競賽的家教學生！</p>
+</div>
                     
                         <a
                             href="/2025/06/30/tutoring/"
@@ -398,17 +360,18 @@
                     
                         <a
                             class="link-unstyled"
-                            href="/2025/06/19/relativity/"
+                            href="/2025/06/20/relativity/"
                             aria-label=": Theory of Relativity"
                         >
-                            Theory of Relativity
+                            <span class="lang-en">Theory of Relativity</span>
+                            <span class="lang-tw" style="display: none;">相對論</span>
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time datetime="2025-06-19T14:00:00-04:00">
+    <time datetime="2025-06-20T02:00:00-04:00">
 	
-		    19 Jun 2025
+		    20 Jun 2025
     	
     </time>
     
@@ -423,10 +386,18 @@
             </div>
             
                 <div class="postShorten-excerpt">
-                    <p>Notes and final project from the 2025 Spring lecture on Theory of Relativity.</p>
+                    <div class="lang-en">
+
+<p>Notes and final project from the 2025 Spring lecture on Theory of Relativity.</p>
+</div>
+
+<div class="lang-tw" style="display: none;">
+
+<p>2025 年春季相對論課程筆記與期末專題。</p>
+</div>
                     
                         <a
-                            href="/2025/06/19/relativity/"
+                            href="/2025/06/20/relativity/"
                             class="postShorten-excerpt_link link"
                             aria-label=": Theory of Relativity"
                         >
@@ -439,7 +410,7 @@
         </div>
         
             <a
-                href="/2025/06/19/relativity/"
+                href="/2025/06/20/relativity/"
                 aria-label=": Theory of Relativity"
             >
                 <div class="postShorten-thumbnailimg">
@@ -459,17 +430,18 @@
                     
                         <a
                             class="link-unstyled"
-                            href="/2025/06/09/quantum_optics/"
+                            href="/2025/06/10/quantum_optics/"
                             aria-label=": Quantum Optics"
                         >
-                            Quantum Optics
+                            <span class="lang-en">Quantum Optics</span>
+                            <span class="lang-tw" style="display: none;">量子光學導論</span>
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time datetime="2025-06-09T22:00:00-04:00">
+    <time datetime="2025-06-10T10:00:00-04:00">
 	
-		    09 Jun 2025
+		    10 Jun 2025
     	
     </time>
     
@@ -484,10 +456,18 @@
             </div>
             
                 <div class="postShorten-excerpt">
-                    <p>Notes and final project from the 2025 Spring lecture on Quantum Optics.</p>
+                    <div class="lang-en">
+
+<p>Notes and final project from the 2025 Spring lecture on Quantum Optics.</p>
+</div>
+
+<div class="lang-tw" style="display: none;">
+
+<p>2025 年春季量子光學導論課程筆記與期末專題。</p>
+</div>
                     
                         <a
-                            href="/2025/06/09/quantum_optics/"
+                            href="/2025/06/10/quantum_optics/"
                             class="postShorten-excerpt_link link"
                             aria-label=": Quantum Optics"
                         >
@@ -500,7 +480,7 @@
         </div>
         
             <a
-                href="/2025/06/09/quantum_optics/"
+                href="/2025/06/10/quantum_optics/"
                 aria-label=": Quantum Optics"
             >
                 <div class="postShorten-thumbnailimg">
@@ -528,6 +508,85 @@
         Copyrights &copy; 2026 Jonathan Huang. All Rights Reserved.
     </span>
 </footer>
+<script>
+window.applyLanguage = function(lang) {
+    const en = document.querySelectorAll('.lang-en');
+    const tw = document.querySelectorAll('.lang-tw');
+    
+    if (lang === 'tw') {
+        en.forEach(el => el.style.display = 'none');
+        tw.forEach(el => el.style.display = ''); // Reverts to natural block/inline
+    } else {
+        en.forEach(el => el.style.display = ''); // Reverts to natural block/inline
+        tw.forEach(el => el.style.display = 'none');
+    }
+
+    // Update the button UI graphics
+    const langDisplay = document.getElementById('lang-display');
+    const headerBtnMap = document.getElementById('header-lang-btn');
+    if (langDisplay) {
+        if (lang === 'tw') {
+            langDisplay.innerHTML = '<span style="color:#9e9e9e; font-weight:normal;">EN</span> <i class="fa fa-exchange" style="color:#9e9e9e;"></i> <span style="color:#fff; font-weight:bold;">中文</span>';
+            if (headerBtnMap) headerBtnMap.innerHTML = '<span style="opacity:0.6;">EN</span> <span style="opacity:0.6;">/</span> <span style="color:#fff; font-weight:bold;">中文</span>';
+        } else {
+            langDisplay.innerHTML = '<span style="color:#fff; font-weight:bold;">EN</span> <i class="fa fa-exchange" style="color:#9e9e9e;"></i> <span style="color:#9e9e9e; font-weight:normal;">中文</span>';
+            if (headerBtnMap) headerBtnMap.innerHTML = '<span style="color:#fff; font-weight:bold;">EN</span> <span style="opacity:0.6;">/</span> <span style="opacity:0.6;">中文</span>';
+        }
+    }
+
+    // Toggle specific TOC sections
+    const tocEnList = document.querySelectorAll('li.toc-en');
+    const tocTwList = document.querySelectorAll('li.toc-tw');
+    if (lang === 'tw') {
+        tocEnList.forEach(el => el.style.display = 'none');
+        tocTwList.forEach(el => el.style.display = 'list-item');
+    } else {
+        tocEnList.forEach(el => el.style.display = 'list-item');
+        tocTwList.forEach(el => el.style.display = 'none');
+    }
+}
+
+window.tagToc = function() {
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        try {
+            // Get original target section
+            const targetId = decodeURIComponent(link.getAttribute('href').substring(1));
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+                // look up parent chain for lang-en or lang-tw
+                let parent = targetEl.parentElement;
+                while(parent && parent.className !== 'main-content-wrap') {
+                    if (parent.classList && parent.classList.contains('lang-en')) { 
+                        link.parentElement.classList.add('toc-en'); break; 
+                    }
+                    if (parent.classList && parent.classList.contains('lang-tw')) { 
+                        link.parentElement.classList.add('toc-tw'); break; 
+                    }
+                    parent = parent.parentElement;
+                }
+            }
+        } catch(e) {}
+    });
+}
+
+
+window.toggleLanguage = function() {
+    const savedLang = localStorage.getItem('site_lang') || 'en';
+    const nextLang = savedLang === 'en' ? 'tw' : 'en';
+    localStorage.setItem('site_lang', nextLang);
+    window.applyLanguage(nextLang);
+}
+
+// Apply language state immediately on page load
+window.tagToc();
+const savedLang = localStorage.getItem('site_lang');
+if (savedLang) {
+    window.applyLanguage(savedLang);
+} else {
+    window.applyLanguage('en');
+}
+</script>
 
             </div>
             
@@ -549,14 +608,14 @@
         
             <h4 id="about-card-name">Jonathan Huang</h4>
         
-            <div id="about-card-bio"><p>I am a student of physics at National Taiwan University. I am interested in mathematical physics and biophysics. You may find my work here.</p>
+            <div id="about-card-bio"><p><span class="lang-en">I am a Physics and Mathematics double major with a minor in Electrical Engineering at National Taiwan University.</span><span class="lang-tw" style="display: none;">我在台灣大學主修物理和數學，並輔修電機。</span></p>
 </div>
         
         
             <div id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Student at National Taiwan University</p>
+                <p>author.job</p>
 
             </div>
         

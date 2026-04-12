@@ -84,6 +84,7 @@
         >
             Jonathan Huang&#39;s website
         </a>
+        <button id="header-lang-btn" onclick="window.toggleLanguage()" style="margin-left: 20px; padding: 2px 8px; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.5); color: #fff; border-radius: 3px; cursor: pointer; font-size: 0.8em; vertical-align: middle;">EN / 繁</button>
     </div>
     
         
@@ -108,7 +109,13 @@
     
 
 <nav id="sidebar" data-behavior="1">
-    <div class="sidebar-container">
+    <div style="position: absolute; top: 15px; left: 15px; z-index: 10;">
+        <button id="lang-switch-btn" onclick="window.toggleLanguage()" style="padding: 4px 8px; background: transparent; border: 1px solid #9e9e9e; color: #9e9e9e; border-radius: 4px; cursor: pointer; font-size: 0.8em; transition: all 0.2s; display: flex; align-items: center; gap: 5px;" onmouseover="this.style.color='#fff'; this.style.borderColor='#fff'" onmouseout="this.style.color='#9e9e9e'; this.style.borderColor='#9e9e9e'">
+            <i class="fa fa-globe"></i>
+            <span id="lang-display" style="font-weight: bold;">EN <i class="fa fa-exchange"></i> 繁</span>
+        </button>
+    </div>
+    <div class="sidebar-container" style="padding-top: 20px;">
         
             <div class="sidebar-profile">
                 <a
@@ -119,7 +126,7 @@
                 </a>
                 <h4 class="sidebar-profile-name">Jonathan Huang</h4>
                 
-                    <h5 class="sidebar-profile-bio"><p>I am a student of physics at National Taiwan University. I am interested in mathematical physics and biophysics. You may find my work here.</p>
+                    <h5 class="sidebar-profile-bio"><p><span class="lang-en">I am a Physics and Mathematics double major with a minor in Electrical Engineering at National Taiwan University.</span><span class="lang-tw" style="display: none;">我在台灣大學主修物理和數學，並輔修電機。</span></p>
 </h5>
                 
             </div>
@@ -134,10 +141,13 @@
                             href="/"
                             
                             rel="noopener"
-                            title="Home"
                         >
                         <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Home</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">Home</span>
+                            <span class="lang-tw" style="display: none;">首頁</span>
+                        </span>
                     </a>
             </li>
             
@@ -148,24 +158,13 @@
                             href="/all-categories"
                             
                             rel="noopener"
-                            title="Categories"
                         >
                         <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Categories</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a
-                            class="sidebar-button-link open-algolia-search"
-                            href="#search"
+                        <span class="sidebar-button-desc">
                             
-                            rel="noopener"
-                            title="Search"
-                        >
-                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Search</span>
+                            <span class="lang-en">Categories</span>
+                            <span class="lang-tw" style="display: none;">分類</span>
+                        </span>
                     </a>
             </li>
             
@@ -176,10 +175,13 @@
                             href="#about"
                             
                             rel="noopener"
-                            title="About"
                         >
                         <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">About</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">About</span>
+                            <span class="lang-tw" style="display: none;">關於</span>
+                        </span>
                     </a>
             </li>
             
@@ -196,10 +198,13 @@
                                 target="_blank"
                             
                             rel="noopener"
-                            title="GitHub"
                         >
                         <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">GitHub</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">GitHub</span>
+                            <span class="lang-tw" style="display: none;">GitHub</span>
+                        </span>
                     </a>
             </li>
             
@@ -212,10 +217,13 @@
                                 target="_blank"
                             
                             rel="noopener"
-                            title="Stack Overflow"
                         >
                         <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Stack Overflow</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">Stack Overflow</span>
+                            <span class="lang-tw" style="display: none;">Stack Overflow</span>
+                        </span>
                     </a>
             </li>
             
@@ -228,10 +236,13 @@
                                 target="_blank"
                             
                             rel="noopener"
-                            title="Facebook"
                         >
                         <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Facebook</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">Facebook</span>
+                            <span class="lang-tw" style="display: none;">Facebook</span>
+                        </span>
                     </a>
             </li>
             
@@ -244,10 +255,13 @@
                                 target="_blank"
                             
                             rel="noopener"
-                            title="Mail"
                         >
                         <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Mail</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">Mail</span>
+                            <span class="lang-tw" style="display: none;">Mail</span>
+                        </span>
                     </a>
             </li>
             
@@ -276,17 +290,18 @@
                     
                         <a
                             class="link-unstyled"
-                            href="/2025/04/22/linear_algebra/"
+                            href="/2025/04/23/linear_algebra/"
                             aria-label=": Linear Algebra"
                         >
-                            Linear Algebra
+                            <span class="lang-en">Linear Algebra</span>
+                            <span class="lang-tw" style="display: none;">線性代數</span>
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time datetime="2025-04-22T12:00:00-04:00">
+    <time datetime="2025-04-23T00:00:00-04:00">
 	
-		    22 Apr 2025
+		    23 Apr 2025
     	
     </time>
     
@@ -301,11 +316,19 @@
             </div>
             
                 <div class="postShorten-excerpt">
-                    <hr>
+                    <div class="lang-en">
+
+<hr>
 <p>The course Linear Algebra is a two-semester course delivered in the 2024 Fall and the 2025 Spring semesters.</p>
+</div>
+
+<div class="lang-tw" style="display: none;">
+
+<p>線性代數是 2024 秋季和 2025 春季學期的兩學期課程。</p>
+</div>
                     
                         <a
-                            href="/2025/04/22/linear_algebra/"
+                            href="/2025/04/23/linear_algebra/"
                             class="postShorten-excerpt_link link"
                             aria-label=": Linear Algebra"
                         >
@@ -318,7 +341,7 @@
         </div>
         
             <a
-                href="/2025/04/22/linear_algebra/"
+                href="/2025/04/23/linear_algebra/"
                 aria-label=": Linear Algebra"
             >
                 <div class="postShorten-thumbnailimg">
@@ -338,17 +361,18 @@
                     
                         <a
                             class="link-unstyled"
-                            href="/2025/04/21/mechanics/"
-                            aria-label=": Classical Mechanics"
+                            href="/2025/04/16/DFT/"
+                            aria-label=": Density Functional Theory"
                         >
-                            Classical Mechanics
+                            <span class="lang-en">Density Functional Theory</span>
+                            <span class="lang-tw" style="display: none;">密度泛函理論</span>
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time datetime="2025-04-21T05:00:00-04:00">
+    <time datetime="2025-04-16T00:00:00-04:00">
 	
-		    21 Apr 2025
+		    16 Apr 2025
     	
     </time>
     
@@ -363,71 +387,18 @@
             </div>
             
                 <div class="postShorten-excerpt">
-                    <p>This is a collection of my WIP notes on classical mechanics.</p>
-                    
-                        <a
-                            href="/2025/04/21/mechanics/"
-                            class="postShorten-excerpt_link link"
-                            aria-label=": Classical Mechanics"
-                        >
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-            <a
-                href="/2025/04/21/mechanics/"
-                aria-label=": Classical Mechanics"
-            >
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" src="/images/thumbs/mech.jpg"/>
-                </div>
-            </a>
-            
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-left">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a
-                            class="link-unstyled"
-                            href="/2025/04/15/DFT/"
-                            aria-label=": Density Functional Theory"
-                        >
-                            Density Functional Theory
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time datetime="2025-04-15T12:00:00-04:00">
-	
-		    15 Apr 2025
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Notes/">Notes</a>
+                    <div class="lang-en">
 
-
-    
+<p>Notes and other resources related to the course Density Functional Theory by Professor Jeng-Da Chai.</p>
 </div>
 
-            </div>
-            
-                <div class="postShorten-excerpt">
-                    <p>Notes and other resources related to the course Density Functional Theory, Prof. Chai, Jeng-Da, 2024 Fall.</p>
+<div class="lang-tw" style="display: none;">
+
+<p>蔡政達老師的密度泛函課程筆記和相關參考資料。</p>
+</div>
                     
                         <a
-                            href="/2025/04/15/DFT/"
+                            href="/2025/04/16/DFT/"
                             class="postShorten-excerpt_link link"
                             aria-label=": Density Functional Theory"
                         >
@@ -440,7 +411,7 @@
         </div>
         
             <a
-                href="/2025/04/15/DFT/"
+                href="/2025/04/16/DFT/"
                 aria-label=": Density Functional Theory"
             >
                 <div class="postShorten-thumbnailimg">
@@ -460,17 +431,18 @@
                     
                         <a
                             class="link-unstyled"
-                            href="/2025/04/13/resources/"
+                            href="/2025/04/14/resources/"
                             aria-label=": Textbook Resources"
                         >
-                            Textbook Resources
+                            <span class="lang-en">Textbook Resources</span>
+                            <span class="lang-tw" style="display: none;">教科書資源</span>
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time datetime="2025-04-13T14:00:00-04:00">
+    <time datetime="2025-04-14T02:00:00-04:00">
 	
-		    13 Apr 2025
+		    14 Apr 2025
     	
     </time>
     
@@ -485,10 +457,18 @@
             </div>
             
                 <div class="postShorten-excerpt">
-                    <p>Some textbook resources I found helpful, categorized roughly by topics and difficulty.</p>
+                    <div class="lang-en">
+
+<p>Some textbook resources I found helpful, categorized roughly by topics and difficulty.</p>
+</div>
+
+<div class="lang-tw" style="display: none;">
+
+<p>一些推薦的教科書。</p>
+</div>
                     
                         <a
-                            href="/2025/04/13/resources/"
+                            href="/2025/04/14/resources/"
                             class="postShorten-excerpt_link link"
                             aria-label=": Textbook Resources"
                         >
@@ -501,7 +481,7 @@
         </div>
         
             <a
-                href="/2025/04/13/resources/"
+                href="/2025/04/14/resources/"
                 aria-label=": Textbook Resources"
             >
                 <div class="postShorten-thumbnailimg">
@@ -524,7 +504,8 @@
                             href="/2025/04/01/recent_07_22/"
                             aria-label=": Thinking Log"
                         >
-                            Thinking Log
+                            <span class="lang-en">Thinking Log</span>
+                            <span class="lang-tw" style="display: none;">思考日誌</span>
                         </a>
                     
                 </h1>
@@ -546,7 +527,15 @@
             </div>
             
                 <div class="postShorten-excerpt">
-                    <p>Some short notes and thinking.</p>
+                    <div class="lang-en">
+
+<p>Some short notes and thinking.</p>
+</div>
+
+<div class="lang-tw" style="display: none;">
+
+<p>一些簡短的筆記與思考。</p>
+</div>
                     
                         <a
                             href="/2025/04/01/recent_07_22/"
@@ -590,6 +579,85 @@
         Copyrights &copy; 2026 Jonathan Huang. All Rights Reserved.
     </span>
 </footer>
+<script>
+window.applyLanguage = function(lang) {
+    const en = document.querySelectorAll('.lang-en');
+    const tw = document.querySelectorAll('.lang-tw');
+    
+    if (lang === 'tw') {
+        en.forEach(el => el.style.display = 'none');
+        tw.forEach(el => el.style.display = ''); // Reverts to natural block/inline
+    } else {
+        en.forEach(el => el.style.display = ''); // Reverts to natural block/inline
+        tw.forEach(el => el.style.display = 'none');
+    }
+
+    // Update the button UI graphics
+    const langDisplay = document.getElementById('lang-display');
+    const headerBtnMap = document.getElementById('header-lang-btn');
+    if (langDisplay) {
+        if (lang === 'tw') {
+            langDisplay.innerHTML = '<span style="color:#9e9e9e; font-weight:normal;">EN</span> <i class="fa fa-exchange" style="color:#9e9e9e;"></i> <span style="color:#fff; font-weight:bold;">中文</span>';
+            if (headerBtnMap) headerBtnMap.innerHTML = '<span style="opacity:0.6;">EN</span> <span style="opacity:0.6;">/</span> <span style="color:#fff; font-weight:bold;">中文</span>';
+        } else {
+            langDisplay.innerHTML = '<span style="color:#fff; font-weight:bold;">EN</span> <i class="fa fa-exchange" style="color:#9e9e9e;"></i> <span style="color:#9e9e9e; font-weight:normal;">中文</span>';
+            if (headerBtnMap) headerBtnMap.innerHTML = '<span style="color:#fff; font-weight:bold;">EN</span> <span style="opacity:0.6;">/</span> <span style="opacity:0.6;">中文</span>';
+        }
+    }
+
+    // Toggle specific TOC sections
+    const tocEnList = document.querySelectorAll('li.toc-en');
+    const tocTwList = document.querySelectorAll('li.toc-tw');
+    if (lang === 'tw') {
+        tocEnList.forEach(el => el.style.display = 'none');
+        tocTwList.forEach(el => el.style.display = 'list-item');
+    } else {
+        tocEnList.forEach(el => el.style.display = 'list-item');
+        tocTwList.forEach(el => el.style.display = 'none');
+    }
+}
+
+window.tagToc = function() {
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        try {
+            // Get original target section
+            const targetId = decodeURIComponent(link.getAttribute('href').substring(1));
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+                // look up parent chain for lang-en or lang-tw
+                let parent = targetEl.parentElement;
+                while(parent && parent.className !== 'main-content-wrap') {
+                    if (parent.classList && parent.classList.contains('lang-en')) { 
+                        link.parentElement.classList.add('toc-en'); break; 
+                    }
+                    if (parent.classList && parent.classList.contains('lang-tw')) { 
+                        link.parentElement.classList.add('toc-tw'); break; 
+                    }
+                    parent = parent.parentElement;
+                }
+            }
+        } catch(e) {}
+    });
+}
+
+
+window.toggleLanguage = function() {
+    const savedLang = localStorage.getItem('site_lang') || 'en';
+    const nextLang = savedLang === 'en' ? 'tw' : 'en';
+    localStorage.setItem('site_lang', nextLang);
+    window.applyLanguage(nextLang);
+}
+
+// Apply language state immediately on page load
+window.tagToc();
+const savedLang = localStorage.getItem('site_lang');
+if (savedLang) {
+    window.applyLanguage(savedLang);
+} else {
+    window.applyLanguage('en');
+}
+</script>
 
             </div>
             
@@ -611,14 +679,14 @@
         
             <h4 id="about-card-name">Jonathan Huang</h4>
         
-            <div id="about-card-bio"><p>I am a student of physics at National Taiwan University. I am interested in mathematical physics and biophysics. You may find my work here.</p>
+            <div id="about-card-bio"><p><span class="lang-en">I am a Physics and Mathematics double major with a minor in Electrical Engineering at National Taiwan University.</span><span class="lang-tw" style="display: none;">我在台灣大學主修物理和數學，並輔修電機。</span></p>
 </div>
         
         
             <div id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Student at National Taiwan University</p>
+                <p>author.job</p>
 
             </div>
         

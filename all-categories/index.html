@@ -86,6 +86,7 @@
         >
             Jonathan Huang&#39;s website
         </a>
+        <button id="header-lang-btn" onclick="window.toggleLanguage()" style="margin-left: 20px; padding: 2px 8px; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.5); color: #fff; border-radius: 3px; cursor: pointer; font-size: 0.8em; vertical-align: middle;">EN / 繁</button>
     </div>
     
         
@@ -110,7 +111,13 @@
     
 
 <nav id="sidebar" data-behavior="1">
-    <div class="sidebar-container">
+    <div style="position: absolute; top: 15px; left: 15px; z-index: 10;">
+        <button id="lang-switch-btn" onclick="window.toggleLanguage()" style="padding: 4px 8px; background: transparent; border: 1px solid #9e9e9e; color: #9e9e9e; border-radius: 4px; cursor: pointer; font-size: 0.8em; transition: all 0.2s; display: flex; align-items: center; gap: 5px;" onmouseover="this.style.color='#fff'; this.style.borderColor='#fff'" onmouseout="this.style.color='#9e9e9e'; this.style.borderColor='#9e9e9e'">
+            <i class="fa fa-globe"></i>
+            <span id="lang-display" style="font-weight: bold;">EN <i class="fa fa-exchange"></i> 繁</span>
+        </button>
+    </div>
+    <div class="sidebar-container" style="padding-top: 20px;">
         
             <div class="sidebar-profile">
                 <a
@@ -121,7 +128,7 @@
                 </a>
                 <h4 class="sidebar-profile-name">Jonathan Huang</h4>
                 
-                    <h5 class="sidebar-profile-bio"><p>I am a student of physics at National Taiwan University. I am interested in mathematical physics and biophysics. You may find my work here.</p>
+                    <h5 class="sidebar-profile-bio"><p><span class="lang-en">I am a Physics and Mathematics double major with a minor in Electrical Engineering at National Taiwan University.</span><span class="lang-tw" style="display: none;">我在台灣大學主修物理和數學，並輔修電機。</span></p>
 </h5>
                 
             </div>
@@ -136,10 +143,13 @@
                             href="/"
                             
                             rel="noopener"
-                            title="Home"
                         >
                         <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Home</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">Home</span>
+                            <span class="lang-tw" style="display: none;">首頁</span>
+                        </span>
                     </a>
             </li>
             
@@ -150,24 +160,13 @@
                             href="/all-categories"
                             
                             rel="noopener"
-                            title="Categories"
                         >
                         <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Categories</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a
-                            class="sidebar-button-link open-algolia-search"
-                            href="#search"
+                        <span class="sidebar-button-desc">
                             
-                            rel="noopener"
-                            title="Search"
-                        >
-                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Search</span>
+                            <span class="lang-en">Categories</span>
+                            <span class="lang-tw" style="display: none;">分類</span>
+                        </span>
                     </a>
             </li>
             
@@ -178,10 +177,13 @@
                             href="#about"
                             
                             rel="noopener"
-                            title="About"
                         >
                         <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">About</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">About</span>
+                            <span class="lang-tw" style="display: none;">關於</span>
+                        </span>
                     </a>
             </li>
             
@@ -198,10 +200,13 @@
                                 target="_blank"
                             
                             rel="noopener"
-                            title="GitHub"
                         >
                         <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">GitHub</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">GitHub</span>
+                            <span class="lang-tw" style="display: none;">GitHub</span>
+                        </span>
                     </a>
             </li>
             
@@ -214,10 +219,13 @@
                                 target="_blank"
                             
                             rel="noopener"
-                            title="Stack Overflow"
                         >
                         <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Stack Overflow</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">Stack Overflow</span>
+                            <span class="lang-tw" style="display: none;">Stack Overflow</span>
+                        </span>
                     </a>
             </li>
             
@@ -230,10 +238,13 @@
                                 target="_blank"
                             
                             rel="noopener"
-                            title="Facebook"
                         >
                         <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Facebook</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">Facebook</span>
+                            <span class="lang-tw" style="display: none;">Facebook</span>
+                        </span>
                     </a>
             </li>
             
@@ -246,10 +257,13 @@
                                 target="_blank"
                             
                             rel="noopener"
-                            title="Mail"
                         >
                         <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">Mail</span>
+                        <span class="sidebar-button-desc">
+                            
+                            <span class="lang-en">Mail</span>
+                            <span class="lang-tw" style="display: none;">Mail</span>
+                        </span>
                     </a>
             </li>
             
@@ -307,7 +321,7 @@
             
         
             
-                    <div id="posts-list-Notes" class="archive " data-category="notes" data-parent-categories=""><h4 class="archive-title text-xlarge"><a class="link-unstyled" href="/categories/Notes/">Notes (12)</a></h4><ul class="archive-posts"><li class="archive-post"><a class="archive-post-title" href="/2026/04/03/2026_winter/">2026 Winter Semester (UWaterloo)</a><span class="archive-post-date"> - 03 Apr 2026</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/12/31/2025_fall/">2025 Fall Semester (NTU)</a><span class="archive-post-date"> - 31 Dec 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/12/09/qft_ntu/">Quantum Field Theory</a><span class="archive-post-date"> - 09 Dec 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/12/03/intro_to_geometry/">Introduction to Geometry</a><span class="archive-post-date"> - 03 Dec 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/12/02/ode/">Intro to Ordinary Differential Equations</a><span class="archive-post-date"> - 02 Dec 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/12/01/analysis/">Introduction to Analysis</a><span class="archive-post-date"> - 01 Dec 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/06/30/2025_spring/">2025 Spring Semester (NTU)</a><span class="archive-post-date"> - 30 Jun 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/06/19/relativity/">Theory of Relativity</a><span class="archive-post-date"> - 19 Jun 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/06/09/quantum_optics/">Quantum Optics</a><span class="archive-post-date"> - 09 Jun 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/04/22/linear_algebra/">Linear Algebra</a><span class="archive-post-date"> - 22 Apr 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/04/21/mechanics/">Classical Mechanics</a><span class="archive-post-date"> - 21 Apr 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/04/15/DFT/">Density Functional Theory</a><span class="archive-post-date"> - 15 Apr 2025</span></li></ul></div>
+                    <div id="posts-list-Notes" class="archive " data-category="notes" data-parent-categories=""><h4 class="archive-title text-xlarge"><a class="link-unstyled" href="/categories/Notes/">Notes (11)</a></h4><ul class="archive-posts"><li class="archive-post"><a class="archive-post-title" href="/2026/04/03/2026_winter/">2026 Winter Semester (UWaterloo)</a><span class="archive-post-date"> - 03 Apr 2026</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/12/31/2025_fall/">2025 Fall Semester (NTU)</a><span class="archive-post-date"> - 31 Dec 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/12/09/qft_ntu/">Quantum Field Theory</a><span class="archive-post-date"> - 09 Dec 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/12/03/intro_to_geometry/">Introduction to Geometry</a><span class="archive-post-date"> - 03 Dec 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/12/02/ode/">Intro to Ordinary Differential Equations</a><span class="archive-post-date"> - 02 Dec 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/12/01/analysis/">Introduction to Analysis</a><span class="archive-post-date"> - 01 Dec 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/07/01/2025_spring/">2025 Spring Semester (NTU)</a><span class="archive-post-date"> - 01 Jul 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/06/20/relativity/">Theory of Relativity</a><span class="archive-post-date"> - 20 Jun 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/06/10/quantum_optics/">Quantum Optics</a><span class="archive-post-date"> - 10 Jun 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/04/23/linear_algebra/">Linear Algebra</a><span class="archive-post-date"> - 23 Apr 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/04/16/DFT/">Density Functional Theory</a><span class="archive-post-date"> - 16 Apr 2025</span></li></ul></div>
             
         
             
@@ -315,7 +329,7 @@
             
         
             
-                    <div id="posts-list-Resources" class="archive " data-category="resources" data-parent-categories=""><h4 class="archive-title text-xlarge"><a class="link-unstyled" href="/categories/Resources/">Resources (2)</a></h4><ul class="archive-posts"><li class="archive-post"><a class="archive-post-title" href="/2025/08/09/dnn/">Introduction to Deep Learning</a><span class="archive-post-date"> - 09 Aug 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/04/13/resources/">Textbook Resources</a><span class="archive-post-date"> - 13 Apr 2025</span></li></ul></div>
+                    <div id="posts-list-Resources" class="archive " data-category="resources" data-parent-categories=""><h4 class="archive-title text-xlarge"><a class="link-unstyled" href="/categories/Resources/">Resources (2)</a></h4><ul class="archive-posts"><li class="archive-post"><a class="archive-post-title" href="/2025/08/10/dnn/">Introduction to Deep Learning</a><span class="archive-post-date"> - 10 Aug 2025</span></li><li class="archive-post"><a class="archive-post-title" href="/2025/04/14/resources/">Textbook Resources</a><span class="archive-post-date"> - 14 Apr 2025</span></li></ul></div>
             
         
             
@@ -330,6 +344,85 @@
         Copyrights &copy; 2026 Jonathan Huang. All Rights Reserved.
     </span>
 </footer>
+<script>
+window.applyLanguage = function(lang) {
+    const en = document.querySelectorAll('.lang-en');
+    const tw = document.querySelectorAll('.lang-tw');
+    
+    if (lang === 'tw') {
+        en.forEach(el => el.style.display = 'none');
+        tw.forEach(el => el.style.display = ''); // Reverts to natural block/inline
+    } else {
+        en.forEach(el => el.style.display = ''); // Reverts to natural block/inline
+        tw.forEach(el => el.style.display = 'none');
+    }
+
+    // Update the button UI graphics
+    const langDisplay = document.getElementById('lang-display');
+    const headerBtnMap = document.getElementById('header-lang-btn');
+    if (langDisplay) {
+        if (lang === 'tw') {
+            langDisplay.innerHTML = '<span style="color:#9e9e9e; font-weight:normal;">EN</span> <i class="fa fa-exchange" style="color:#9e9e9e;"></i> <span style="color:#fff; font-weight:bold;">中文</span>';
+            if (headerBtnMap) headerBtnMap.innerHTML = '<span style="opacity:0.6;">EN</span> <span style="opacity:0.6;">/</span> <span style="color:#fff; font-weight:bold;">中文</span>';
+        } else {
+            langDisplay.innerHTML = '<span style="color:#fff; font-weight:bold;">EN</span> <i class="fa fa-exchange" style="color:#9e9e9e;"></i> <span style="color:#9e9e9e; font-weight:normal;">中文</span>';
+            if (headerBtnMap) headerBtnMap.innerHTML = '<span style="color:#fff; font-weight:bold;">EN</span> <span style="opacity:0.6;">/</span> <span style="opacity:0.6;">中文</span>';
+        }
+    }
+
+    // Toggle specific TOC sections
+    const tocEnList = document.querySelectorAll('li.toc-en');
+    const tocTwList = document.querySelectorAll('li.toc-tw');
+    if (lang === 'tw') {
+        tocEnList.forEach(el => el.style.display = 'none');
+        tocTwList.forEach(el => el.style.display = 'list-item');
+    } else {
+        tocEnList.forEach(el => el.style.display = 'list-item');
+        tocTwList.forEach(el => el.style.display = 'none');
+    }
+}
+
+window.tagToc = function() {
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        try {
+            // Get original target section
+            const targetId = decodeURIComponent(link.getAttribute('href').substring(1));
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+                // look up parent chain for lang-en or lang-tw
+                let parent = targetEl.parentElement;
+                while(parent && parent.className !== 'main-content-wrap') {
+                    if (parent.classList && parent.classList.contains('lang-en')) { 
+                        link.parentElement.classList.add('toc-en'); break; 
+                    }
+                    if (parent.classList && parent.classList.contains('lang-tw')) { 
+                        link.parentElement.classList.add('toc-tw'); break; 
+                    }
+                    parent = parent.parentElement;
+                }
+            }
+        } catch(e) {}
+    });
+}
+
+
+window.toggleLanguage = function() {
+    const savedLang = localStorage.getItem('site_lang') || 'en';
+    const nextLang = savedLang === 'en' ? 'tw' : 'en';
+    localStorage.setItem('site_lang', nextLang);
+    window.applyLanguage(nextLang);
+}
+
+// Apply language state immediately on page load
+window.tagToc();
+const savedLang = localStorage.getItem('site_lang');
+if (savedLang) {
+    window.applyLanguage(savedLang);
+} else {
+    window.applyLanguage('en');
+}
+</script>
 
             </div>
             
@@ -351,14 +444,14 @@
         
             <h4 id="about-card-name">Jonathan Huang</h4>
         
-            <div id="about-card-bio"><p>I am a student of physics at National Taiwan University. I am interested in mathematical physics and biophysics. You may find my work here.</p>
+            <div id="about-card-bio"><p><span class="lang-en">I am a Physics and Mathematics double major with a minor in Electrical Engineering at National Taiwan University.</span><span class="lang-tw" style="display: none;">我在台灣大學主修物理和數學，並輔修電機。</span></p>
 </div>
         
         
             <div id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Student at National Taiwan University</p>
+                <p>author.job</p>
 
             </div>
         
